@@ -1,0 +1,112 @@
+# Project Adapter
+
+## Project Type
+
+- web application
+
+## Issue Required Sections
+
+- Context
+- Requirements
+- Acceptance Criteria
+- Target Files
+
+## Issue Draft Location
+
+- optional local drafts in `.agentic/issues/drafts/`
+- live GitHub Issues remain the source of truth after publication
+
+## Execution Start Condition
+
+Implementation may begin when the issue has `in-progress` and does not have `hold` or `needs-human`.
+
+## Plan Visibility Mode
+
+- issue comment
+
+## Human Control Signals
+
+Labels:
+
+- `hold`
+- `needs-human`
+
+Comments:
+
+- `stop`
+- `hold`
+- `change approach`
+- `re-plan`
+
+Issue comments and PR comments are both valid control surfaces.
+
+Once a PR exists, the PR thread becomes the preferred steering surface.
+
+## State Labels
+
+Lifecycle:
+
+- `ready-for-build`
+- `in-progress`
+- `in-review`
+- `done`
+
+Supporting labels:
+
+- `topology:combined`
+- `topology:split`
+- `agent-builder`
+- `frontend`
+- `backend`
+- `full-stack`
+- `config-only`
+- `docs-only`
+- `hold`
+- `needs-human`
+
+## Branch Naming
+
+- `issue-<number>-<slug>`
+
+## Required Pre-Read Docs
+
+- `README.md`
+
+## Verification Commands
+
+- `npm run lint`
+- `npm run build`
+- `npm test`
+- `npm run test:e2e`
+
+## User-Visible Change Policy
+
+- screenshots required for user-visible changes
+- browser smoke coverage required for navigation, forms, cart, checkout, account, or pricing presentation changes
+- preview link required if preview deployments exist
+
+## Evidence Requirements
+
+- screenshots
+- verification summary
+- trace or video for browser automation
+- preview deployment link if available
+
+## Automation Hooks
+
+- issue readiness validation
+- draft PR bootstrapper
+- issue and PR state sync
+
+## Stop-And-Ask Conditions
+
+- authentication or session model changes
+- billing or payment provider changes
+- tax, shipping, fulfillment, or refund behavior changes not explicitly scoped in the issue
+- PII collection, retention, or deletion behavior changes
+- checkout flow changes beyond the scoped acceptance criteria
+- architectural changes beyond the named subsystem
+
+## Repo-Specific Constraints
+
+- keep framework and hosting assumptions local
